@@ -18,7 +18,7 @@ class CreateDepartamentosTable extends Migration
             $table->string('TlfDepartamento',9);
             $table->string('JefeDepartamento',45);
             $table->integer('idCentroDepartamento')->unsigned();
-            $table->foreign('idCentroDepartamento')->references('idCentro')->on('centros');
+            $table->foreign('idCentroDepartamento')->references('idCentro')->on('centros')->onDelete('restrict')->onUpdate('restrict');
             $table->timestamps();
         });
     }

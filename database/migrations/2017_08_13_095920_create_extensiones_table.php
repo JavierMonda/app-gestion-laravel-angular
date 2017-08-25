@@ -17,7 +17,7 @@ class CreateExtensionesTable extends Migration
             $table->integer('numero')->unsigned();
             $table->integer('numPuerto',3);
             $table->string('nombreDepartamentoExtension',45);
-            $table->foreign('nombreDepartamentoExtension')->references('nombreDepartamento')->on('departamentos');
+            $table->foreign('nombreDepartamentoExtension')->references('nombreDepartamento')->on('departamentos')->onDelete('restrict')->onUpdate('restrict');
             $table->timestamps();
         });
     }

@@ -20,7 +20,7 @@ class CreateDatafonosTable extends Migration
             $table->string('banco',45);
             $table->enum('conexion',['gprs','ethernet']);          
             $table->integer('idCentroDatafonos')->unsigned()->unique();
-            $table->foreign('idCentroDatafonos')->references('idCentro')->on('centros')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('idCentroDatafonos')->references('idCentro')->on('centros')->onDelete('restrict')->onUpdate('restrict');
             $table->timestamps();
         });
     }

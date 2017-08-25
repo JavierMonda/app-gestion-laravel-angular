@@ -17,7 +17,7 @@ class CreateClaseZonasTable extends Migration
             $table->string('nombreClaseZona',45);
             $table->string('zona',45);
             $table->unique(array('nombreClaseZona','zona'));
-            $table->foreign('nombreClaseZona')->references('nombreClase')->on('clases');
+            $table->foreign('nombreClaseZona')->references('nombreClase')->on('clases')->onDelete('restrict')->onUpdate('restrict');
             $table->timestamps();
         });
     }

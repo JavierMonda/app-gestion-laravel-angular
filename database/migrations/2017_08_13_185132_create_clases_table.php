@@ -16,7 +16,7 @@ class CreateClasesTable extends Migration
         Schema::create('clases', function (Blueprint $table) {
             $table->string('nombreClase',45)->unique();
             $table->integer('idTrabajosClase')->unsigned();
-            $table->foreign('idTrabajosClase')->references('idTrabajos')->on('trabajos');
+            $table->foreign('idTrabajosClase')->references('idTrabajos')->on('trabajos')->onDelete('restrict')->onUpdate('restrict');
             $table->timestamps();
         });
     }

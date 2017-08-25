@@ -19,7 +19,7 @@ class CreateCentrosTable extends Migration
             $table->string('nombreCentro',45);
             $table->string('CIFCentro',9);
             $table->foreign('CIFCentro')
-                 ->references('CIF')->on('empresas')->onDelete('cascade')->onUpdate('cascade');
+                 ->references('CIF')->on('empresas')->onDelete('restrict')->onUpdate('restrict');
             $table->timestamps();
         });
 

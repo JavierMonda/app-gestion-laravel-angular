@@ -19,7 +19,7 @@ class CreateAusenciasTable extends Migration
             $table->enum('tipoAusencia',['baja','vacaciones','absentismo','permiso']);
             $table->string('descripcion',90)->nullable();
             $table->string('DNIAusencia',9);
-            $table->foreign('DNIAusencia')->references('DNI')->on('trabajadores');
+            $table->foreign('DNIAusencia')->references('DNI')->on('trabajadores')->onDelete('restrict')->onUpdate('restrict');
             $table->timestamps();
         });
     }

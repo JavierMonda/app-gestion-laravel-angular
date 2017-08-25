@@ -17,7 +17,7 @@ class CreateTrabajadorTlfsTable extends Migration
             $table->string('DNITrabajadorTlf',9);
             $table->string('TlfTrabajador',9);
             $table->unique(array('DNITrabajadorTlf','TlfTrabajador'));
-            $table->foreign('DNITrabajadorTlf')->references('DNI')->on('trabajadores');
+            $table->foreign('DNITrabajadorTlf')->references('DNI')->on('trabajadores')->onDelete('restrict')->onUpdate('restrict');
             $table->timestamps();
         });
     }

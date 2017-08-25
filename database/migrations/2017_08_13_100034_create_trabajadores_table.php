@@ -23,7 +23,7 @@ class CreateTrabajadoresTable extends Migration
             $table->string('tipoContrato',45);
             $table->integer('vacaciones')->unsigned();
             $table->string('nombreDepartamentoTrabajador',45);
-            $table->foreign('nombreDepartamentoTrabajador')->references('nombreDepartamento')->on('departamentos');
+            $table->foreign('nombreDepartamentoTrabajador')->references('nombreDepartamento')->on('departamentos')->onDelete('restrict')->onUpdate('restrict');
             $table->timestamps();
         });
     }

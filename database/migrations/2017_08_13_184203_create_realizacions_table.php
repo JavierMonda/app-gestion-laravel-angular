@@ -20,8 +20,8 @@ class CreateRealizacionsTable extends Migration
             $table->date('fechaRealiza');
             $table->timestamp('horaIni');
             $table->timestamp('horaFin');
-            $table->foreign('idTrabajosRealiza')->references('idTrabajos')->on('trabajos');
-            $table->foreign('DNIRealiza')->references('DNI')->on('trabajadores');
+            $table->foreign('idTrabajosRealiza')->references('idTrabajos')->on('trabajos')->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign('DNIRealiza')->references('DNI')->on('trabajadores')->onDelete('restrict')->onUpdate('restrict');
             $table->timestamps();
         });
     }
